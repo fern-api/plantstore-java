@@ -36,7 +36,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'io.github.fern-api'
             artifactId = 'plantstore'
-            version = '0.0.6'
+            version = '0.0.7'
             from components.java
         }
     }
