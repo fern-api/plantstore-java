@@ -1,11 +1,7 @@
-# {Company} Java Library
+# Plant Store API Java Library
 
-![Maven Central](https://img.shields.io/maven-central/v/io.github.fern-api/{company}) 
-![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/io.github.fern-api/{company}?server=https%3A%2F%2Fs01.oss.sonatype.org)
-
-## Documentation
-
-API documentation is available at <{docs_url}>.
+![Maven Central](https://img.shields.io/maven-central/v/io.github.fern-api/plantstore}) 
+![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/io.github.fern-api/plantstore?server=https%3A%2F%2Fs01.oss.sonatype.org)
 
 ## Usage
 
@@ -22,6 +18,6 @@ This SDK is in beta, and there may be breaking changes between versions without 
 
 ## Contributing
 
-While we value open-source contributions to this SDK, this library is generated programmatically. Additions made directly to this library would have to be moved over to our generation code, otherwise they would be overwritten upon the next generated release. Feel free to open a PR as a proof of concept, but know that we will not be able to merge it as-is. We suggest [opening an issue](https://github.com/fern-{company}/{company}-java/issues) first to discuss with us!
+While we value open-source contributions to this SDK, this library is generated programmatically. Additions made directly to this library would have to be moved over to our generation code, otherwise they would be overwritten upon the next generated release. Feel free to open a PR as a proof of concept, but know that we will not be able to merge it as-is. We suggest [opening an issue](https://github.com/fern-api/plantstore-java/issues) first to discuss with us!
 
 On the other hand, contributions to the README are always very welcome!
