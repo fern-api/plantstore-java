@@ -1,6 +1,6 @@
 # Plant Store API Java Library
 
-![Maven Central](https://img.shields.io/maven-central/v/io.github.fern-api/plantstore}) 
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.fern-api/plantstore})](https://central.sonatype.dev/artifact/io.github.fern-api/plantstore) 
 ![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/io.github.fern-api/plantstore?server=https%3A%2F%2Fs01.oss.sonatype.org)
 
 ## Usage
@@ -8,8 +8,17 @@
 Check out the [sample app](.sample-app/app.java) which consumes this SDK!
 
 ```java
-// start with env variables
-TODO
+PlantStoreApiClient plantStore =
+        new PlantStoreApiClient(BearerAuth.of("MY-TOKEN"));
+
+try {
+    Plant plant = plantStore.plant().find(Find.Request.builder()
+        .plantId(UUID.fromString("ef19fe7b-c4c9-4631-81d7-a83aba610a7d"))
+        .build());
+    System.out.println("Received plant: " + plant.toString());
+} catch (FindException e) {
+    System.out.println("Failed to find plant");
+}
 ```
 
 ## Beta status
