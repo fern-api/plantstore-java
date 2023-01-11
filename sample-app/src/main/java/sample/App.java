@@ -5,7 +5,7 @@ import com.plantStore.api.client.plant.exceptions.FindException;
 import com.plantStore.api.client.plant.types.Plant;
 import com.plantStore.api.core.BearerAuth;
 import java.lang.String;
-import com.plantStore.api.PlantStoreApiClient
+import com.plantStore.api.PlantStoreApiClient;
 import java.util.UUID;
 
 public final class App {
