@@ -1,6 +1,6 @@
 # Plant Store API Java Library
 
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.fern-api/plantstore})](https://central.sonatype.dev/artifact/io.github.fern-api/plantstore) 
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.fern-api/plantstore)](https://central.sonatype.dev/artifact/io.github.fern-api/plantstore) 
 ![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/io.github.fern-api/plantstore?server=https%3A%2F%2Fs01.oss.sonatype.org)
 
 ## Usage
