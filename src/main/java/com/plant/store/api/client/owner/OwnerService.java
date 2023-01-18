@@ -14,6 +14,7 @@ import feign.jaxrs.JAXRSContract;
 import java.lang.String;
 import java.util.UUID;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.HeaderParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -30,7 +31,7 @@ interface OwnerService {
   PlantOwner add(@HeaderParam("Authorization") BearerAuth auth, AddOwnerRequest body) throws
       AddException;
 
-  @POST
+  @DELETE
   @Path("/{ownerId}")
   void delete(@HeaderParam("Authorization") BearerAuth auth, @PathParam("ownerId") UUID ownerId)
       throws DeleteException;
