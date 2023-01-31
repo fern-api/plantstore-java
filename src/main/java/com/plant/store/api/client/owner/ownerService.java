@@ -25,7 +25,7 @@ import javax.ws.rs.core.MediaType;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @Path("/owner")
-interface OwnerService {
+interface ownerService {
   @POST
   @Path("/")
   PlantOwner add(@HeaderParam("Authorization") BearerAuth auth, AddOwnerRequest body) throws
@@ -36,11 +36,11 @@ interface OwnerService {
   void delete(@HeaderParam("Authorization") BearerAuth auth, @PathParam("ownerId") UUID ownerId)
       throws DeleteException;
 
-  static OwnerService getClient(String url) {
+  static ownerService getClient(String url) {
     return Feign.builder()
         .contract(new OptionalAwareContract(new JAXRSContract()))
         .decoder(new JacksonDecoder(ObjectMappers.JSON_MAPPER))
         .encoder(new JacksonEncoder(ObjectMappers.JSON_MAPPER))
-        .errorDecoder(new OwnerServiceErrorDecoder()).target(OwnerService.class, url);
+        .errorDecoder(new ownerServiceErrorDecoder()).target(ownerService.class, url);
   }
 }

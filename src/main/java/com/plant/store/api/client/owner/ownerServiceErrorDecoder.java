@@ -1,8 +1,7 @@
-package com.plant.store.api.client.plant;
+package com.plant.store.api.client.owner;
 
-import com.plant.store.api.client.plant.exceptions.AddException;
-import com.plant.store.api.client.plant.exceptions.DeleteException;
-import com.plant.store.api.client.plant.exceptions.FindException;
+import com.plant.store.api.client.owner.exceptions.AddException;
+import com.plant.store.api.client.owner.exceptions.DeleteException;
 import com.plant.store.api.core.ObjectMappers;
 import feign.Response;
 import feign.codec.ErrorDecoder;
@@ -13,15 +12,12 @@ import java.lang.Override;
 import java.lang.RuntimeException;
 import java.lang.String;
 
-final class PlantServiceErrorDecoder implements ErrorDecoder {
+final class ownerServiceErrorDecoder implements ErrorDecoder {
   @Override
   public Exception decode(String methodKey, Response response) {
     try {
       if (methodKey.contains("add")) {
         return decodeException(response, AddException.class);
-      }
-      if (methodKey.contains("find")) {
-        return decodeException(response, FindException.class);
       }
       if (methodKey.contains("delete")) {
         return decodeException(response, DeleteException.class);

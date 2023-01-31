@@ -10,18 +10,18 @@ import java.lang.RuntimeException;
 import java.lang.String;
 import java.util.Optional;
 
-public final class OwnerServiceClient {
-  private final OwnerService service;
+public final class ownerServiceClient {
+  private final ownerService service;
 
   private final Optional<BearerAuth> auth;
 
-  public OwnerServiceClient(String url) {
-    this.service = OwnerService.getClient(url);
+  public ownerServiceClient(String url) {
+    this.service = ownerService.getClient(url);
     this.auth = Optional.empty();
   }
 
-  public OwnerServiceClient(String url, BearerAuth auth) {
-    this.service = OwnerService.getClient(url);
+  public ownerServiceClient(String url, BearerAuth auth) {
+    this.service = ownerService.getClient(url);
     this.auth = Optional.of(auth);
   }
 

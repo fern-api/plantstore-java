@@ -27,7 +27,7 @@ import javax.ws.rs.core.MediaType;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @Path("/plant")
-interface PlantService {
+interface plantService {
   @POST
   @Path("/")
   void add(@HeaderParam("Authorization") BearerAuth auth, AddPlantRequest body) throws AddException;
@@ -42,11 +42,11 @@ interface PlantService {
   void delete(@HeaderParam("Authorization") BearerAuth auth, @PathParam("plantId") UUID plantId)
       throws DeleteException;
 
-  static PlantService getClient(String url) {
+  static plantService getClient(String url) {
     return Feign.builder()
         .contract(new OptionalAwareContract(new JAXRSContract()))
         .decoder(new JacksonDecoder(ObjectMappers.JSON_MAPPER))
         .encoder(new JacksonEncoder(ObjectMappers.JSON_MAPPER))
-        .errorDecoder(new PlantServiceErrorDecoder()).target(PlantService.class, url);
+        .errorDecoder(new plantServiceErrorDecoder()).target(plantService.class, url);
   }
 }

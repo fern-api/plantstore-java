@@ -12,18 +12,18 @@ import java.lang.RuntimeException;
 import java.lang.String;
 import java.util.Optional;
 
-public final class PlantServiceClient {
-  private final PlantService service;
+public final class plantServiceClient {
+  private final plantService service;
 
   private final Optional<BearerAuth> auth;
 
-  public PlantServiceClient(String url) {
-    this.service = PlantService.getClient(url);
+  public plantServiceClient(String url) {
+    this.service = plantService.getClient(url);
     this.auth = Optional.empty();
   }
 
-  public PlantServiceClient(String url, BearerAuth auth) {
-    this.service = PlantService.getClient(url);
+  public plantServiceClient(String url, BearerAuth auth) {
+    this.service = plantService.getClient(url);
     this.auth = Optional.of(auth);
   }
 

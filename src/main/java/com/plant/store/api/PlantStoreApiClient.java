@@ -1,7 +1,7 @@
 package com.plant.store.api;
 
-import com.plant.store.api.client.owner.OwnerServiceClient;
-import com.plant.store.api.client.plant.PlantServiceClient;
+import com.plant.store.api.client.owner.ownerServiceClient;
+import com.plant.store.api.client.plant.plantServiceClient;
 import com.plant.store.api.core.BearerAuth;
 import com.plant.store.api.core.Environment;
 import java.util.Objects;
@@ -9,24 +9,24 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
 
 public final class PlantStoreApiClient {
-  private final Supplier<OwnerServiceClient> ownerServiceClient;
+  private final Supplier<ownerServiceClient> ownerServiceClient;
 
-  private final Supplier<PlantServiceClient> plantServiceClient;
+  private final Supplier<plantServiceClient> plantServiceClient;
 
   public PlantStoreApiClient(BearerAuth auth) {
     this(Environment.PRODUCTION, auth);
   }
 
   public PlantStoreApiClient(Environment environment, BearerAuth auth) {
-    this.ownerServiceClient = memoize(() -> new OwnerServiceClient(environment.getUrl(), auth));
-    this.plantServiceClient = memoize(() -> new PlantServiceClient(environment.getUrl(), auth));
+    this.ownerServiceClient = memoize(() -> new ownerServiceClient(environment.getUrl(), auth));
+    this.plantServiceClient = memoize(() -> new plantServiceClient(environment.getUrl(), auth));
   }
 
-  public final OwnerServiceClient owner() {
+  public final ownerServiceClient owner() {
     return this.ownerServiceClient.get();
   }
 
-  public final PlantServiceClient plant() {
+  public final plantServiceClient plant() {
     return this.plantServiceClient.get();
   }
 
